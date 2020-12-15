@@ -23,23 +23,44 @@ public class AppTest
     @Test
     public void testAppConstructor() {
         try {
-            new App();
+            new Calculadora();
         } catch (Exception e) {
             fail("Construction failed.");
         }
     }
 
     @Test
-    public void testAppMain()
+    public void testCalculadora()
     {
-        App.main(null);
+        int sum, minus, mult, div;
+
+        sum = Calc.op(7,'+',3);
+        minus = Calc.op(4,'-',2);
+        mult = Calc.op(2,'*',3);
+        div = Calc.op(6,'/',2);
+
         try {
-            assertEquals("Hello World!" + System.getProperty("line.separator"), outContent.toString());
+            assertEquals(10, sum);
         } catch (AssertionError e) {
-            fail("\"message\" is not \"Hello World!\"");
+            fail("Resultado da soma não é 10");
+        }
+        try {
+            assertEquals(2, minus);
+        } catch (AssertionError e) {
+            fail("Resultado da subtração não é 2");
+        }
+        try {
+            assertEquals(6, mult);
+        } catch (AssertionError e) {
+            fail("Resultado da multiplicação não é 6");
+        }
+        try {
+            assertEquals(3, div);
+        } catch (AssertionError e) {
+            fail("Resultado da divisão não é 3");
         }
     }
-
+ 
     @After
     public void cleanUpStreams() {
         System.setOut(null);
