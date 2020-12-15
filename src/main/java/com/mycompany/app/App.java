@@ -7,7 +7,7 @@ public class Calc {
 
         int result;
 
-        switch (op) {
+        switch (operator) {
         case '+':
             result = first + second;
             return result;
