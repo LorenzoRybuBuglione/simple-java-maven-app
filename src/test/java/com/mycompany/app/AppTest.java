@@ -23,7 +23,7 @@ public class AppTest
     @Test
     public void testAppConstructor() {
         try {
-            new Calculadora();
+            new Calc();
         } catch (Exception e) {
             fail("Construction failed.");
         }
@@ -34,10 +34,10 @@ public class AppTest
     {
         int sum, minus, mult, div;
 
-        sum = Calc.op(7,'+',3);
-        minus = Calc.op(4,'-',2);
-        mult = Calc.op(2,'*',3);
-        div = Calc.op(6,'/',2);
+        sum = Calc.operator(7,'+',3);
+        minus = Calc.operator(4,'-',2);
+        mult = Calc.operator(2,'*',3);
+        div = Calc.operator(6,'/',2);
 
         try {
             assertEquals(10, sum);
